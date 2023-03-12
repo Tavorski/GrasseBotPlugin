@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="GrasseBort:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/GrasseBort_jar</output-path>
+    <root id="archive" name="GrasseBort.jar">
+      <element id="module-output" name="GrasseBort" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../../librerias/spigot-api-1.19.3-R0.1-20230304.005121-55-shaded.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
