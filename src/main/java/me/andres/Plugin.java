@@ -23,7 +23,7 @@ public final class Plugin extends JavaPlugin {
         MCBort = new DiscordBot(this);
         db = new Database();
         db.connect_to_db("spigot20230310","posgres","admin");
-        Bukkit.getPluginManager().registerEvents(new SpigotListener(MCBort), this);
+        Bukkit.getPluginManager().registerEvents(new Eventos(this), this);
         // Handler para el initEmbed
         /*Handler h = new Handler() {
             @Override

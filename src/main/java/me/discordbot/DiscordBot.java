@@ -48,16 +48,14 @@ public final class DiscordBot {
         System.out.println("Bot CHECK NULL HECHO");
 
         // Config.yml
-            // Tomamos una referencia al canal con el chat de Discord
-            System.out.println("\n} config.yml {");
-            System.out.println("\n\tReferencia al chat de Discord");
-            String chatChannelId = mainPlugin.getConfig().getString("chat-channel-id");
-            if(chatChannelId != null) {
-                discChatServerMC = jda.getTextChannelById(chatChannelId);
-            }
-            System.out.println("\tReferencia al chat de Discord HECHO");
-
-
+        // Tomamos una referencia al canal con el chat de Discord
+        System.out.println("\n} config.yml {");
+        System.out.println("\n\tReferencia al chat de Discord");
+        String chatChannelId = mainPlugin.getConfig().getString("chat-channel-id");
+        if(chatChannelId != null) {
+            discChatServerMC = jda.getTextChannelById(chatChannelId);
+        }
+        System.out.println("\tReferencia al chat de Discord HECHO");
 
         System.out.println("} config.yml");
 
@@ -65,17 +63,14 @@ public final class DiscordBot {
         // Registramos manejadores de eventos
         System.out.println("\nRegistro de manejadores");
         jda.addEventListener(new DiscordListener(this));
-        mainPlugin.getServer().getPluginManager().registerEvents(new SpigotListener(this), mainPlugin);
+        Bukkit.getPluginManager().registerEvents(new SpigotListener(this), mainPlugin);
         System.out.println("Registro de manejadores HECHO");
 
 
         // Mensaje de apertura
-        String msg = "El servidor está ABIERTO. "
-                + Emoji.fromUnicode("U+2705")
-                + Emoji.fromUnicode("U+2705")
-                + Emoji.fromUnicode("U+2705");
-        msg = msg.replace("E:","" );
-        msg = msg.replace("(0)","" );
+        String msg = "El servidor está ABIERTO. \u2705\u2705\u2705 ";
+        //msg = msg.replace("E:","" );
+        //msg = msg.replace("(0)","" );
         EmbedBuilder builder = new EmbedBuilder()
                 .setAuthor(
                         msg,
@@ -104,18 +99,14 @@ public final class DiscordBot {
 
     public void disableBot() {
         // Mensaje de cierre
-        String msg = "El servidor se ha CERRADO. "
-                + Emoji.fromUnicode("U+1F6AB")
-                + Emoji.fromUnicode("U+1F6AB")
-                + Emoji.fromUnicode("U+1F6AB");
-        msg = msg.replace("E:","" );
-        msg = msg.replace("(0)","" );
+        String msg = "El servidor se ha CERRADO. \uD83D\uDEAB\uD83D\uDEAB\uD83D\uDEAB";
+        //msg = msg.replace("E:","" );
+        //msg = msg.replace("(0)","" );
         EmbedBuilder builder = new EmbedBuilder()
                 .setAuthor(
                         msg,
                         null,
                         null
-
                 );
         builder.setColor(Color.RED);
         discChatServerMC.sendMessageEmbeds(builder.build()).queue();

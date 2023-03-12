@@ -1,6 +1,6 @@
 package me.util;
 import java.sql.*;
-
+import org.postgresql.Driver;
 public class Database {
 
     public Connection connect_to_db(String dbname, String user, String pass) {

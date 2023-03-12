@@ -64,7 +64,7 @@ public class Eventos implements Listener {
                         + "Te mató "
                         + (event.getEntity().getKiller()!=null ?
                         (event.getEntity().getKiller().getDisplayName()
-                                + (event.getEntity().getKiller().getInventory().getItemInMainHand()!=null ?
+                                + (event.getEntity().getKiller().getInventory().getItemInMainHand().getItemMeta()!=null ?
                                 (" con " + event.getEntity().getKiller().getInventory().getItemInMainHand().getItemMeta().getDisplayName())
                                 : " por tonto."))
                         : "tu idiocia (" + event.getDeathMessage() + ")."),
