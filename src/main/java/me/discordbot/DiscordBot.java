@@ -72,7 +72,7 @@ public final class DiscordBot {
 
 
         // Mensaje de apertura
-        String msg = "El servidor está ABIERTO. \u2705\u2705\u2705 ";
+        String msg = "El servidor está ABIERTO. ✅✅✅ ";
         //msg = msg.replace("E:","" );
         //msg = msg.replace("(0)","" );
         EmbedBuilder builder = new EmbedBuilder()
