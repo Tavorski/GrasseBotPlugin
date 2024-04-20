@@ -5,6 +5,7 @@ import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.entities.emoji.Emoji;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
+import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -31,8 +32,11 @@ public final class DiscordBot {
         System.out.println("\nInicio del bot");
         try {
             JDABuilder jdaBuilder = JDABuilder.createDefault(botToken);
+            jdaBuilder.enableIntents(GatewayIntent.MESSAGE_CONTENT);
             jda = jdaBuilder.build();
             jda.awaitReady();
+
+
         }
         catch (InterruptedException e) {
             e.printStackTrace();

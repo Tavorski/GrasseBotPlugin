@@ -10,19 +10,20 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.*;
+import java.net.ConnectException;
 import java.nio.file.*;
+import java.sql.Connection;
 
 public final class Plugin extends JavaPlugin {
     // CAMPOS
-    private static Database db;
+    private static Connection db;
     private static DiscordBot MCBort;
 
    // EN APERTURA Y CIERRE
     @Override
     public void onEnable() {
         MCBort = new DiscordBot(this);
-        db = new Database();
-        db.connect_to_db("spigot20230310","posgres","admin");
+        db=Database.connect_to_db("spigot20230310","postgres","admin");
         Bukkit.getPluginManager().registerEvents(new Eventos(this), this);
         // Handler para el initEmbed
         /*Handler h = new Handler() {
@@ -67,7 +68,7 @@ public final class Plugin extends JavaPlugin {
        // serializado("./plugins/elPlugin_data","data.andres", DATA);
     }
 
-    public static Database getDB() {
+    public Connection getDB() {
         return db;
     }
     public static void serializado(String dir, String filename, Object ser_target) {

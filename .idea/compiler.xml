@@ -9,8 +9,5 @@
         <module name="GrasseBort" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="GrasseBort" target="17" />
-    </bytecodeTargetLevel>
   </component>
 </project>

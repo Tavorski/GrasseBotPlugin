@@ -3,7 +3,7 @@ import java.sql.*;
 import org.postgresql.Driver;
 public class Database {
 
-    public Connection connect_to_db(String dbname, String user, String pass) {
+    public static Connection connect_to_db(String dbname, String user, String pass) {
 
         Connection conn = null;
         try {
@@ -21,7 +21,7 @@ public class Database {
         return conn;
     }
 
-    public void createTable(java.sql.Connection conn, String recovery) {
+    public static void createTable(java.sql.Connection conn, String recovery) {
 
         Statement statement;
         try {
@@ -36,13 +36,13 @@ public class Database {
         }
     }
 
-    public void insert_row(java.sql.Connection conn, int socials, double transfer) {
+    public static void insertTNT(java.sql.Connection conn, String jugador, Date instante) {
         Statement statement;
         try {
-            String query = "INSERT INTO recovery(balance, social_security) VALUES (" + transfer + "," + socials + ");";
+            String query = "INSERT INTO tnt(jugador, instante) VALUES (" + jugador + "," + instante.toString() +");";
             statement = conn.createStatement();
             statement.executeUpdate(query);
-            System.out.println("row inserted");
+            System.out.println("row tnt inserted");
 
         } catch (Exception e) {
             System.out.println(e);

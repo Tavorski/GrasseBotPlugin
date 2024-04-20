@@ -1,12 +1,6 @@
-bot-token: OTgxNTY5NDg4NTE0MzM4ODY4.Gcema7.Ooetw-yIHS_GctoggoyE0IM7GdI1c9x1JE9kh4
-chat-channel-id: 981569110536232980
-nicknameMap:
-  "Tavorski#5277": "Tavorski"
-  "Astropato#7333": "Afronato"
-  "coj#8539": "Angiru2"
-  "🅱ateo#0242": "BBateo"
-  "Folocios#6896": "Lucaspalaciog"
-  "Nigui#5316": "NicoCC"
+bot-token:
+chat-channel-id:
+
 advancementMap:
   "story/mine_stone": "Stone Age"
   "story/upgrade_tools": "Getting an Upgrade"
